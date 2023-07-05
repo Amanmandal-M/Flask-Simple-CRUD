@@ -3,10 +3,10 @@ from controllers.crud_controllers import create, read, update, delete
 
 crud_route = Blueprint('crud', __name__)
 
-crud_route.route('/create', methods=['GET', 'POST'])(create)
+crud_route.route('/create', methods=['POST'])(create)
 
 crud_route.route('/read')(read)
 
-crud_route.route('/update', methods=['GET', 'POST'])(update)
+crud_route.route('/update/<int:id>', methods=['PATCH'])(update)
 
-crud_route.route('/delete', methods=['GET', 'POST'])(delete)
+crud_route.route('/delete/<int:id>', methods=['DELETE'])(delete)

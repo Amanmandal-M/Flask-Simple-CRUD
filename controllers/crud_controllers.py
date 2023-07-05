@@ -1,30 +1,35 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, jsonify
 
-data = {}
+datas = []
 
 def create():
-    if request.method == 'POST':
-        key = request.form.get('key')
-        value = request.form.get('value')
-        data[key] = value
-    return data
+    data = request.get_json()
+    user_data = {
+            'id': data['id'],
+            'name': data['name'],
+            'age': data['age'],
+           }
+    datas.append(user_data)
+    return jsonify(user_data)
+
 
 def read():
-    return data
+    return jsonify(datas)
 
 
-def update():
-    if request.method == 'POST':
-        key = request.form.get('key')
-        value = request.form.get('value')
-        if key in data:
-            data[key] = value
-    return render_template('update.html')
+def update(id):
+    data = request.get_json()
+    for user in datas:
+        if user['id'] == id:
+            user['name'] = data['name'] 
+            user['age'] = data['age'] 
+            return jsonify(user)
+    return jsonify({'error': 'User not found'})
 
         
-def delete():
-    if request.method == 'POST':
-        key = request.form.get('key')
-        if key in data:
-            del data[key]
-    return render_template('delete.html')        
+def delete(id):
+    for user in users:
+        if user['id'] == id:
+            users.remove(user)
+            return jsonify({'message': 'User deleted'})
+    return jsonify({'error': 'user not found'})      
