@@ -1,15 +1,30 @@
+from flask import Blueprint, render_template, request
+
 data = {}
 
-def create_entry(key, value):
-    data[key] = value
-
-def get_data():
+def create():
+    if request.method == 'POST':
+        key = request.form.get('key')
+        value = request.form.get('value')
+        data[key] = value
     return data
 
-def update_entry(key, value):
-    if key in data:
-        data[key] = value
+def read():
+    return data
 
-def delete_entry(key):
-    if key in data:
-        del data[key]
+
+def update():
+    if request.method == 'POST':
+        key = request.form.get('key')
+        value = request.form.get('value')
+        if key in data:
+            data[key] = value
+    return render_template('update.html')
+
+        
+def delete():
+    if request.method == 'POST':
+        key = request.form.get('key')
+        if key in data:
+            del data[key]
+    return render_template('delete.html')        
