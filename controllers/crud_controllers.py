@@ -21,10 +21,11 @@ def update(id):
     data = request.get_json()
     for user in datas:
         if user['id'] == id:
-            user['name'] = data['name'] 
-            user['age'] = data['age'] 
+            user['name'] = data.get('name', user['name'])
+            user['age'] = data.get('age', user['age'])
             return jsonify(user)
     return jsonify({'error': 'User not found'})
+
 
         
 def delete(id):
