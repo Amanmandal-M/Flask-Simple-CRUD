@@ -27,10 +27,9 @@ def update(id):
     return jsonify({'error': 'User not found'})
 
 
-        
 def delete(id):
-    for user in users:
+    for user in datas:
         if user['id'] == id:
-            users.remove(user)
+            datas.remove(user)
             return jsonify({'message': 'User deleted'})
-    return jsonify({'error': 'user not found'})      
+    return jsonify({'error': 'User not found'})
