@@ -46,6 +46,14 @@ This is a simple backend application implemented using Flask, a Python web frame
    ```bash
    pip install -r requirements.txt
 
+<br>
+
+### Start the Backend Server
+
+<br>
+
+    ```bash
+    python app.py
 
 <br>
 
