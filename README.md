@@ -48,15 +48,6 @@ This is a simple backend application implemented using Flask, a Python web frame
 
 <br>
 
-### Start the Backend Server
-
-<br>
-
-    ```bash
-    python app.py
-
-<br>
-
 ## Configuration
 
 <br>
