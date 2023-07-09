@@ -1,6 +1,10 @@
-# Flask CRUD Operations Backend
+<h1 align="center">Flask CRUD Operations Backend</h1>
+
+<br>
 
 This is a simple backend application implemented using Flask, a Python web framework. The application provides basic CRUD (Create, Read, Update, Delete) operations for managing data.
+
+<br>
 
 ## Features
 
@@ -9,17 +13,25 @@ This is a simple backend application implemented using Flask, a Python web frame
 - **Update**: Modify existing data in the database or locally.
 - **Delete**: Remove data from the database or locally.
 
+<br>
+
 ## Technologies Used
 
 - Python
 - Flask
 
+<br>
+
 ## Getting Started
+
+<br>
 
 ### Prerequisites
 
 - Python 3.11.4
 - Flask 2.0.1
+
+<br>
 
 ### Installation
 
@@ -35,7 +47,11 @@ This is a simple backend application implemented using Flask, a Python web frame
    pip install -r requirements.txt
 
 
+<br>
+
 ## Configuration
+
+<br>
 
 ### Usage
 
@@ -54,6 +70,8 @@ This is a simple backend application implemented using Flask, a Python web frame
    
    - Delete: Send a DELETE request to `/delete/<int:id>` to remove an item from the database or locally database.
 
+<br>
+
 ## Contributing
 
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
@@ -63,6 +81,8 @@ Contributions are welcome! If you'd like to contribute to this project, please f
  - Make the necessary changes and commit them.
  - Push your changes to your forked repository.
  - Submit a pull request explaining the changes you've made
+
+<br>
 
 ## Contact
 
