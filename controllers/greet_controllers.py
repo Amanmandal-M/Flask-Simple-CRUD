@@ -8,7 +8,8 @@ load_dotenv()
 def hello():
     # Use request.args.get() to access query parameters
     secret_key = request.args.get('key')
-    return 'Welcome in Flask Project'
+    return '<h1 style="color:blue;text-align:center">Welcome in Simple Crud Application Using Flask!</h1>'
+
 
 def greet(username):
     return f"Hello, {username}!"
